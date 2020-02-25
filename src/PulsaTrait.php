@@ -1,6 +1,6 @@
 <?php
 
-namespace Rick20\PPOB;
+namespace Devlover\PPOB;
 
 trait PulsaTrait
 {

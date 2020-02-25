@@ -1,4 +1,4 @@
-# PPOB Package for Laravel 5
+# PPOB Package for Laravel 6 & Lumen 6
 
 The purpose of this package is to allow your website to purchase 
 many prepaid digital products like Token PLN, Pulsa, Paket Data and more in Indonesia.
@@ -9,19 +9,21 @@ Right now, the following providers are supported:
 - Tripay ([https://tripay.co.id](https://tripay.co.id))
 - IndoH2H ([https://indoh2h.com](https://indoh2h.com))
 
+## Credit
+Thanks to https://github.com/Devlover/ppob for sharing this code
 
 ## Installation
 
 To get started with PPOB, run this command or add the package to your `composer.json`
 
-    composer require rick20/ppob
+    composer require devlover/ppob
     
 
 ## Configuration
 
 The PPOB package use Laravel autodiscovery so it will be loaded automatically.
 Copy the `config` file with the following command:
-`php artisan vendor:publish --provider="Rick20\PPOB\PPOBServiceProvider"`
+`php artisan vendor:publish --provider="Devlover\PPOB\PPOBServiceProvider"`
 
 Finally add your provider's account in the `.env` file:
 ```
@@ -64,9 +66,9 @@ To add more accounts in a single provider, add those accounts in `config/ppob.ph
 After all sets, use the PPOB as follows:
 ```php
 
-use Rick20\PPOB\Products\Pulsa;
-use Rick20\PPOB\Products\TokenPLN;
-use Rick20\PPOB\Products\GenericProduct;
+use Devlover\PPOB\Products\Pulsa;
+use Devlover\PPOB\Products\TokenPLN;
+use Devlover\PPOB\Products\GenericProduct;
 
 // Topup Pulsa
 $status = PPOB::topup(new Pulsa('082112345678', 50000), 'ref123');

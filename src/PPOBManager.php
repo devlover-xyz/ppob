@@ -1,6 +1,6 @@
 <?php
 
-namespace Rick20\PPOB;
+namespace Devlover\PPOB;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
@@ -18,6 +18,7 @@ class PPOBManager extends Manager
         parent::__construct($app);
 
         $this->client = $client ?? $this->getDefaultClient();
+
     }
 
     public function account($name)
@@ -100,7 +101,7 @@ class PPOBManager extends Manager
         if (isset($this->customCreators[$driver])) {
             return $this->callCustomCreator($driver);
         } else {
-    
+
             $config = $this->app['config']['ppob.accounts.' . $driver];
 
             $method = 'create'.Str::studly($config['provider']).'Driver';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rick20\PPOB\Products;
+namespace Devlover\PPOB\Products;
 
 class TokenPLN extends GenericProduct
 {

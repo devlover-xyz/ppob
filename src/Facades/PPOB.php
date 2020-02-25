@@ -1,6 +1,6 @@
 <?php
 
-namespace Rick20\PPOB\Facades;
+namespace Devlover\PPOB\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

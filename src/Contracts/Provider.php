@@ -1,6 +1,6 @@
 <?php
 
-namespace Rick20\PPOB\Contracts;
+namespace Devlover\PPOB\Contracts;
 
 interface Provider
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Rick20\PPOB\Products;
+namespace Devlover\PPOB\Products;
 
-use Rick20\PPOB\PulsaTrait;
+use Devlover\PPOB\PulsaTrait;
 
 class Pulsa extends GenericProduct
 {

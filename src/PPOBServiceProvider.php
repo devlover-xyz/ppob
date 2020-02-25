@@ -1,7 +1,9 @@
 <?php
 
-namespace Rick20\PPOB;
+namespace Devlover\PPOB;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use Illuminate\Support\ServiceProvider;
 
 class PPOBServiceProvider extends ServiceProvider
@@ -13,6 +15,8 @@ class PPOBServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(ClientInterface::class, Client::class);
+
         $this->app->singleton('ppob', function ($app) {
             return new PPOBManager($app);
         });
@@ -25,9 +29,11 @@ class PPOBServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/ppob.php' => config_path('ppob.php')
-        ], 'config');
+        if (function_exists('config_path')) {
+            $this->publishes([
+                __DIR__ . '/../config/ppob.php' => config_path('ppob.php')
+            ], 'ppob-config');
+        }
     }
 
     /**

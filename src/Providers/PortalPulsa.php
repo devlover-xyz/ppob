@@ -1,11 +1,11 @@
 <?php
 
-namespace Rick20\PPOB\Providers;
+namespace Devlover\PPOB\Providers;
 
 use GuzzleHttp\Client;
-use Rick20\PPOB\Products\Pulsa;
-use Rick20\PPOB\AbstractProvider;
-use Rick20\PPOB\Contracts\Product;
+use Devlover\PPOB\Products\Pulsa;
+use Devlover\PPOB\AbstractProvider;
+use Devlover\PPOB\Contracts\Product;
 
 class PortalPulsa extends AbstractProvider
 {
