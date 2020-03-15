@@ -10,7 +10,7 @@ Right now, the following providers are supported:
 - IndoH2H ([https://indoh2h.com](https://indoh2h.com))
 
 ## Credit
-Thanks to https://github.com/Devlover/ppob for sharing this code
+Thanks to https://github.com/rick20/ppob for sharing this code
 
 ## Installation
 
