@@ -16,6 +16,7 @@ class MobilePulsa extends AbstractProvider
         'balance' => 'balance',
         'topup' => 'topup',
         'status' => 'inquiry',
+        'pricelist' => 'pricelist',
     ];
 
     protected $prefix = [
@@ -66,6 +67,13 @@ class MobilePulsa extends AbstractProvider
     {
         return $this->send($this->signedBalance([
             'ref_id' => 'bl'
+        ]));
+    }
+
+    public function pricelist()
+    {
+        return $this->send($this->signedPricelist([
+            'ref_id' => 'pl'
         ]));
     }
 
