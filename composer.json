@@ -7,11 +7,15 @@
             "email": "devlover.xyz@gmail.com"
         }
     ],
-    "version": "0.2.0",
+    "version": "0.2.1",
     "require": {
         "php": "^7.2",
         "guzzlehttp/guzzle": "^6.5",
         "illuminate/support": "^6.0"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
     },
     "autoload": {
         "psr-4": {

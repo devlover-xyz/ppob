@@ -36,7 +36,14 @@ class PPOBManager extends Manager
     protected function createPortalPulsaDriver(array $config)
     {
         return new Providers\PortalPulsa(
-            $config['userid'], $config['key'], $config['secret'], $this->client
+            $config['username'], $config['apikey'], $config['secret'], $this->client
+        );
+    }
+
+    protected function createJavaH2HDriver(array $config)
+    {
+        return new Providers\JavaH2H(
+            $config['username'], $config['apikey'], $config['secret'], $this->client
         );
     }
 

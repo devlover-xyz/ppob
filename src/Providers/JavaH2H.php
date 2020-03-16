@@ -8,9 +8,9 @@ use Devlover\PPOB\AbstractProvider;
 use Devlover\PPOB\Contracts\Product;
 use Illuminate\Support\Str;
 
-class PortalPulsa extends AbstractProvider
+class JavaH2H extends AbstractProvider
 {
-    protected $endpoint = 'https://portalpulsa.com/api/connect/';
+    protected $endpoint = 'https://javah2h.com/api/connect/';
 
     protected $prefix = [
         Pulsa::class => [
@@ -80,9 +80,9 @@ class PortalPulsa extends AbstractProvider
     {
         $response = $this->client->request('POST', $this->endpoint, [
             'headers' => [
-                'portal-userid' => $this->username,
-                'portal-key' => $this->apikey,
-                'portal-secret' => $this->secret,
+                'h2h-userid' => $this->username,
+                'h2h-key' => $this->apikey,
+                'h2h-secret' => $this->secret,
             ],
             'form_params' => $data
         ]);

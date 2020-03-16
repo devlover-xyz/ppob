@@ -9,6 +9,7 @@ use Devlover\PPOB\Contracts\Product;
 use Devlover\PPOB\Products\TokenPLN;
 use Devlover\PPOB\Products\PaketData;
 use Devlover\PPOB\Products\TopupRequest;
+use phpDocumentor\Reflection\DocBlock\Tags\Param;
 
 class MobilePulsa extends AbstractProvider
 {
@@ -70,11 +71,12 @@ class MobilePulsa extends AbstractProvider
         ]));
     }
 
-    public function pricelist()
+    public function pricelist(Array $param)
     {
         return $this->send($this->signedPricelist([
-            'ref_id' => 'pl'
-        ]));
+            'ref_id' => 'pl',
+            'status' => 'all'
+        ]), $param);
     }
 
     public function status($refId)
@@ -108,9 +110,15 @@ class MobilePulsa extends AbstractProvider
         ]);
     }
 
-    protected function send($data)
+    protected function send($data, $param = false)
     {
-        $response = $this->client->request('POST', $this->endpoint(), [
+        $uri = $this->endpoint();
+
+        if ($param) {
+            $uri = $this->endpoint() . '/' . implode('/', $param);
+        }
+
+        $response = $this->client->request('POST', $uri, [
             'headers' => ['Content-Type' => 'application/json'],
             'body' => json_encode($data)
         ]);

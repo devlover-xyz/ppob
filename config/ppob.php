@@ -2,7 +2,7 @@
 
 return [
 
-    'default' => 'account-mobilepulsa',
+    'default' => 'account-portalpulsa',
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +23,13 @@ return [
             'provider' => 'portal-pulsa',
             'username' => env('PORTALPULSA_USERNAME'),
             'apikey' => env('PORTALPULSA_APIKEY'),
-            'secret' => env('MOBILEPULSA_SECRET')
+            'secret' => env('PORTALPULSA_SECRET')
+        ],
+        'account-javah2h' => [
+            'provider' => 'java-h-2-h',
+            'username' => env('JAVAH2H_USERNAME'),
+            'apikey' => env('JAVAH2H_APIKEY'),
+            'secret' => env('JAVAH2H_SECRET')
         ],
         'account-tripay' => [
             'provider' => 'tripay',
